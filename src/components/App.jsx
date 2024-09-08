@@ -1,9 +1,13 @@
 // src/App.jsx
-export default App;
 
-import Profile from './Profile.jsx';
+
+import Profile from './Profile/Profile';
+import FriendList from './FriendList/FriendList';
+import TransactionHistory from './TransactionHistory/TransactionHistory';
 
 import userData from "../userData.json";
+import friends from "../friends.json";
+import transactions from "../transactions.json";
 
 const App = () => {
  return (
@@ -14,7 +18,13 @@ const App = () => {
     location={userData.location}
     image={userData.avatar}
     stats={userData.stats}
-   />
+         />
+         
+         <FriendList friends={friends} />
+         <TransactionHistory items={transactions} />
   </>
  );
 };
+
+
+export default App;
